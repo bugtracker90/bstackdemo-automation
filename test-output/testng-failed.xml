@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [BStackDemo Test Suite]">
+  <test thread-count="5" name="Smoke Tests(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.bstackdemo.tests.ProductTest">
+        <methods>
+          <include name="verifyAddProductToCart"/>
+        </methods>
+      </class> <!-- com.bstackdemo.tests.ProductTest -->
+    </classes>
+  </test> <!-- Smoke Tests(failed) -->
+  <test thread-count="5" name="Regression Tests(failed)">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.bstackdemo.tests.ProductTest">
+        <methods>
+          <include name="verifyMultipleItemsAddedToCart"/>
+          <include name="verifyRemoveItemFromCart"/>
+          <include name="verifyCompletePurchaseFlow"/>
+          <include name="verifyAddProductToCart"/>
+        </methods>
+      </class> <!-- com.bstackdemo.tests.ProductTest -->
+    </classes>
+  </test> <!-- Regression Tests(failed) -->
+  <test thread-count="5" name="Negative Tests(failed)">
+    <groups>
+      <run>
+        <include name="negative"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.bstackdemo.tests.ProductTest">
+        <methods>
+          <include name="verifyCheckoutWithoutItems"/>
+        </methods>
+      </class> <!-- com.bstackdemo.tests.ProductTest -->
+    </classes>
+  </test> <!-- Negative Tests(failed) -->
+</suite> <!-- Failed suite [BStackDemo Test Suite] -->
