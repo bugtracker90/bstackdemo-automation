@@ -1,8 +1,8 @@
 package com.bstackdemo.base;
 
-import com.bstackdemo.utils.ConfigReader;
-import com.bstackdemo.utils.WebDriverFactory;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -13,14 +13,11 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
 
-        // Create driver from WebDriverFactory
-    	driver = WebDriverFactory.createDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
 
-        // Maximize browser
         driver.manage().window().maximize();
-
-        // Open application URL from config.properties
-        driver.get(ConfigReader.getProperty("baseUrl"));
+        driver.get("https://bstackdemo.com");
     }
 
     @AfterMethod

@@ -1,36 +1,14 @@
+
+
 <suite name="BStackDemo Test Suite">
 
-    <test name="Smoke Tests">
-        <groups>
-            <run>
-                <include name="smoke"/>
-            </run>
-        </groups>
-
+    <test name="Login Tests">
         <classes>
-            <class name="com.bstackdemo.tests.ProductTest"/>
+            <class name="com.bstackdemo.tests.LoginTest"/>
         </classes>
     </test>
 
-    <test name="Regression Tests">
-        <groups>
-            <run>
-                <include name="regression"/>
-            </run>
-        </groups>
-
-        <classes>
-            <class name="com.bstackdemo.tests.ProductTest"/>
-        </classes>
-    </test>
-
-    <test name="Negative Tests">
-        <groups>
-            <run>
-                <include name="negative"/>
-            </run>
-        </groups>
-
+    <test name="Product Tests">
         <classes>
             <class name="com.bstackdemo.tests.ProductTest"/>
         </classes>

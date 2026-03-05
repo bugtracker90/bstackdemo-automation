@@ -23,6 +23,7 @@ public LoginPage(WebDriver driver) {
 
     // Actions
     public void clickSignIn() {
+        wait.until(ExpectedConditions.elementToBeClickable(signInButton));
         driver.findElement(signInButton).click();
     }
 
@@ -37,7 +38,8 @@ public LoginPage(WebDriver driver) {
         driver.findElement(passwordDropdown).sendKeys(password);
         driver.findElement(passwordDropdown).sendKeys("\n");
     }
-        public void clickLogin() {
+    public void clickLogin() {
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton));
         driver.findElement(loginButton).click();
     }
         public boolean isUserLoggedIn() {
@@ -59,7 +61,8 @@ public LoginPage(WebDriver driver) {
         
         }
         public boolean isLoginModalStillOpen() {
-            return driver.findElement(By.id("login-btn")).isDisplayed();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
+            return driver.findElement(loginButton).isDisplayed();
         }
         }
  

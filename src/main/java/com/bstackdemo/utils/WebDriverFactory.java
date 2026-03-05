@@ -1,8 +1,8 @@
 package com.bstackdemo.utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebDriverFactory {
 
@@ -10,14 +10,15 @@ public class WebDriverFactory {
 
         String browser = ConfigReader.getProperty("browser");
 
-        if (browser.equalsIgnoreCase("chrome")) {
+        WebDriver driver = null;
+
+        if (browser == null || browser.equalsIgnoreCase("chrome")) {
 
             WebDriverManager.chromedriver().setup();
-            return new ChromeDriver();
+            driver = new ChromeDriver();
 
-        } else {
-
-            throw new RuntimeException("Browser not supported: " + browser);
         }
+
+        return driver;
     }
 }
